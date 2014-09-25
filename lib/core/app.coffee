@@ -1,0 +1,1 @@
+share.App = {}

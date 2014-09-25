@@ -1,0 +1,24 @@
+<head>
+  <title>Hours</title>
+</head>
+
+<body>
+  {{> main_container}}
+</body>
+
+<template name="main_container">
+{{> loginButtons}}
+
+<h1>Welcome{{#if currentUser}}, {{currentUser.username}}!{{else}} to Hours.{{/if}}</h1>
+{{#unless currentUser}}
+<h2>Please sign in...</h2>
+{{else}}
+{{> control_panel}}
+{{/unless}}
+</template>
+
+<template name="control_panel">
+<h2>Control Panel</h2>
+<h3>Absence Form</h3>
+{{> quickForm id="new_absence" collection=Collections.Absences type="insert"}}
+</template>
